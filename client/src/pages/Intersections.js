@@ -13,7 +13,7 @@ class Intersections extends Component {
     address: "",
     city: "",
     State: "",
-    rating: ""
+    rating: null
   };
 
   componentDidMount() {
