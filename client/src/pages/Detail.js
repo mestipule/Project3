@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
+import Map from "../components/Map/Map";
+
 
 class Detail extends Component {
   state = {
@@ -32,9 +34,20 @@ class Detail extends Component {
           <Col size="md-10 md-offset-1">
             <article>
               <h1>Map</h1>
-              <p>
-              insert map here
-              </p>
+              
+              <div style={{ margin: '100px' }}>
+                <Map
+                    google={this.props.google}
+                    intersection={this.state.intersection.address + ' ' + this.state.intersection.city + ' ' + this.state.intersection.State}
+                    address={this.state.intersection.address}
+                    city={this.state.intersection.city}
+                    state={this.state.intersection.State}
+                    center={{ lat: 38.9095559, lng: -77.0430325 }}
+                    height='300px'
+                    zoom={15}
+                />
+             </div>
+            
             </article>
           </Col>
         </Row>
