@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, FormBtn } from "../components/Form";
+import Map from "../components/Map/Map";
 
 class Intersections extends Component {
   state = {
@@ -58,7 +59,16 @@ class Intersections extends Component {
     }
   };
 
+  handleFullAddressUpdate = (address, city, state) => {
+    this.setState({
+      address: address,
+      city: city,
+      State: state
+    })
+  }
+
   render() {
+    console.log("in intersection render");
     return (
       <Container fluid>
         <Row>
@@ -119,6 +129,25 @@ class Intersections extends Component {
             ) : (
               <h3>No Results to Display</h3>
             )}
+          </Col>
+        </Row>
+        <Row>
+          <Col size="md-10 md-offset-1">
+            <article>
+              <h1>Map</h1>
+              
+              <div style={{ margin: '100px' }}>
+                <Map
+                    page = "landing"
+                    google={this.props.google}
+                    center={{ lat: 38.9095559, lng: -77.0430325 }}
+                    height='300px'
+                    zoom={15}
+                    handleFullAddressUpdate= {this.handleFullAddressUpdate}
+                />
+             </div>
+            
+            </article>
           </Col>
         </Row>
       </Container>
