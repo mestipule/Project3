@@ -37,6 +37,7 @@ class Detail extends Component {
               
               <div style={{ margin: '100px' }}>
                 <Map
+                    page = "detail"
                     google={this.props.google}
                     intersection={this.state.intersection.address + ' ' + this.state.intersection.city + ' ' + this.state.intersection.State}
                     address={this.state.intersection.address}
