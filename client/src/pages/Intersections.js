@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import DeleteBtn from "../components/DeleteBtn";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
@@ -14,7 +13,6 @@ class Intersections extends Component {
     address: "",
     city: "",
     State: "",
-    rating: null
   };
 
   componentDidMount() {
@@ -24,7 +22,7 @@ class Intersections extends Component {
   loadIntersections = () => {
     API.getIntersections()
       .then(res => {
-        this.setState({ intersections: res.data, address: "", city: "", State: "", rating: ""})
+        this.setState({ intersections: res.data, address: "", city: "", State: ""})
         console.log("Res");
         console.log(res)
       }
@@ -52,7 +50,6 @@ class Intersections extends Component {
         address: this.state.address,
         city: this.state.city,
         State: this.state.State,
-        rating: this.state.rating
       })
         .then(res => this.loadIntersections())
         .catch(err => console.log(err));
@@ -74,19 +71,19 @@ class Intersections extends Component {
         <Row>
           <Col size="md-6">
             <Jumbotron>
-              <h1>Add Dangerous Intersections</h1>
+              <h1>Know the exact address? Add your dangerous intersection</h1>
             </Jumbotron>
             <form>
               <Input
                 value={this.state.address}
                 onChange={this.handleInputChange}
-                name="address"
+                name="Address"
                 placeholder="address (required)"
               />
               <Input
                 value={this.state.city}
                 onChange={this.handleInputChange}
-                name="city"
+                name="City"
                 placeholder="city (required)"
               />
               <Input
@@ -95,12 +92,6 @@ class Intersections extends Component {
                 name="State"
                 placeholder="State (required)"
               />
-              <Input
-              value={this.state.Rating}
-              onChange={this.handleInputChange}
-              name="rating"
-              placeholder="Rating (Optional)"
-            />
               <FormBtn
                 disabled={!(this.state.city && this.state.address)}
                 onClick={this.handleFormSubmit}
@@ -119,10 +110,9 @@ class Intersections extends Component {
                   <ListItem key={intersection._id}>
                     <Link to={"/intersections/" + intersection._id}>
                       <strong>
-                        {intersection.address} by {intersection.city}
+                        {intersection.address}, {intersection.city}
                       </strong>
                     </Link>
-                    <DeleteBtn onClick={() => this.deleteBook(intersection._id)} />
                   </ListItem>
                 ))}
               </List>
@@ -134,7 +124,7 @@ class Intersections extends Component {
         <Row>
           <Col size="md-10 md-offset-1">
             <article>
-              <h1>Map</h1>
+              <h1>Drag and drop the pin to add your intersection</h1>
               
               <div style={{ margin: '100px' }}>
                 <Map

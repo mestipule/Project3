@@ -25,7 +25,7 @@ class Detail extends Component {
           <Col size="md-12">
             <Jumbotron>
               <h1>
-                {this.state.intersection.address},{this.state.intersection.city}, {this.state.intersection.State}, Rating: {this.state.intersection.rating}
+                {this.state.intersection.address},{this.state.intersection.city}, {this.state.intersection.State}
               </h1>
             </Jumbotron>
           </Col>
@@ -33,7 +33,6 @@ class Detail extends Component {
         <Row>
           <Col size="md-10 md-offset-1">
             <article>
-              <h1>Map</h1>
               
               <div style={{ margin: '100px' }}>
                 <Map
@@ -54,7 +53,7 @@ class Detail extends Component {
         </Row>
         <Row>
           <Col size="md-2">
-            <Link to="/">← Back to Authors</Link>
+            <Link to="/">← Back to Dangerous Intersections List</Link>
           </Col>
         </Row>
       </Container>
