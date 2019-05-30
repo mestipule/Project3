@@ -4,6 +4,7 @@ import Autocomplete from 'react-google-autocomplete';
 import Geocode from 'react-geocode';
 
 Geocode.setApiKey(process.env.REACT_APP_GOOGLE_KEY);
+console.log(process.env);
 Geocode.enableDebug();
 
 class Map extends React.Component {
