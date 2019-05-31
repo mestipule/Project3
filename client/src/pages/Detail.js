@@ -31,10 +31,11 @@ class Detail extends Component {
           </Col>
         </Row>
         <Row>
-          <Col size="md-10 md-offset-1">
+          <Col size="md-12">
             <article>
               
               <div style={{ margin: '100px' }}>
+         
                 <Map
                     page = "detail"
                     google={this.props.google}
@@ -45,7 +46,8 @@ class Detail extends Component {
                     center={{ lat: 38.9095559, lng: -77.0430325 }}
                     height='300px'
                     zoom={15}
-                />
+                  />
+              
              </div>
             
             </article>

@@ -71,7 +71,7 @@ class Intersections extends Component {
         <Row>
           <Col size="md-6">
             <Jumbotron>
-              <h1>Know the exact address? Add your dangerous intersection</h1>
+              <p className="lead ll">Know the exact address? Add your dangerous intersection</p>
             </Jumbotron>
             <form>
               <Input
@@ -96,13 +96,13 @@ class Intersections extends Component {
                 disabled={!(this.state.city && this.state.address)}
                 onClick={this.handleFormSubmit}
               >
-                Submit Intersection
+                <p className="lead btxt"> Submit Intersection</p>
               </FormBtn>
             </form>
           </Col>
           <Col size="md-6 sm-12">
             <Jumbotron>
-              <h1>Dangerous Intersections List</h1>
+              <p className="lead ll">Dangerous Intersections List</p>
             </Jumbotron>
             {this.state.intersections.length ? (
               <List>
@@ -117,21 +117,22 @@ class Intersections extends Component {
                 ))}
               </List>
             ) : (
-              <h3>No Results to Display</h3>
+                <h1 className="display-4 ptxt">No Results to Display</h1>
             )}
           </Col>
         </Row>
         <Row>
           <Col size="md-10 md-offset-1">
             <article>
-              <h1>Drag and drop the pin to add your intersection</h1>
+              <h1 className="display-4 ptxt">Drag and drop the pin to add your intersection</h1>
               
-              <div style={{ margin: '100px' }}>
+              <div style={{ marginLeft: '10%' , width:'100%'}}>
                 <Map
                     page = "landing"
                     google={this.props.google}
                     center={{ lat: 38.9095559, lng: -77.0430325 }}
-                    height='300px'
+                  height='400px'
+                  
                     zoom={15}
                     handleFullAddressUpdate= {this.handleFullAddressUpdate}
                 />
