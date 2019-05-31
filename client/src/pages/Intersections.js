@@ -10,8 +10,8 @@ import Map from "../components/Map/Map";
 class Intersections extends Component {
   state = {
     intersections: [],
-    address: "",
-    city: "",
+    Address: "",
+    City: "",
     State: "",
   };
 
@@ -22,7 +22,7 @@ class Intersections extends Component {
   loadIntersections = () => {
     API.getIntersections()
       .then(res => {
-        this.setState({ intersections: res.data, address: "", city: "", State: ""})
+        this.setState({ intersections: res.data, Address: "", City: "", State: ""})
         console.log("Res");
         console.log(res)
       }
@@ -47,8 +47,8 @@ class Intersections extends Component {
     event.preventDefault();
     if (this.state.address && this.state.city && this.state.State) {
       API.saveIntersection({
-        address: this.state.address,
-        city: this.state.city,
+        address: this.state.Address,
+        city: this.state.City,
         State: this.state.State,
       })
         .then(res => this.loadIntersections())
@@ -58,8 +58,8 @@ class Intersections extends Component {
 
   handleFullAddressUpdate = (address, city, state) => {
     this.setState({
-      address: address,
-      city: city,
+      Address: address,
+      City: city,
       State: state
     })
   }
@@ -75,13 +75,13 @@ class Intersections extends Component {
             </Jumbotron>
             <form>
               <Input
-                value={this.state.address}
+                value={this.state.Address}
                 onChange={this.handleInputChange}
                 name="Address"
                 placeholder="address (required)"
               />
               <Input
-                value={this.state.city}
+                value={this.state.City}
                 onChange={this.handleInputChange}
                 name="City"
                 placeholder="city (required)"
@@ -93,7 +93,7 @@ class Intersections extends Component {
                 placeholder="State (required)"
               />
               <FormBtn
-                disabled={!(this.state.city && this.state.address)}
+                disabled={!(this.state.City && this.state.Address)}
                 onClick={this.handleFormSubmit}
               >
                 <p className="lead btxt"> Submit Intersection</p>
@@ -131,8 +131,8 @@ class Intersections extends Component {
                     page = "landing"
                     google={this.props.google}
                     center={{ lat: 38.9095559, lng: -77.0430325 }}
-                  height='400px'
-                  
+                    height='400px'
+                    
                     zoom={15}
                     handleFullAddressUpdate= {this.handleFullAddressUpdate}
                 />

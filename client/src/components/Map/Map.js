@@ -31,6 +31,22 @@ class Map extends React.Component {
             intersection : props.intersection,
             isLandingPage : isLandingPage
         }
+
+        if(isLandingPage){
+            navigator.geolocation.getCurrentPosition(pos => {
+                const coords = pos.coords;
+                this.setState({
+                  mapPosition: {
+                    lat: coords.latitude,
+                    lng: coords.longitude
+                  }, 
+                  markerPosition: {
+                    lat: coords.latitude,
+                    lng: coords.longitude
+                  }
+                });
+              });
+        }
     }  
     componentDidMount() {
         console.log("In componentDidMount now", this.state.intersection);
