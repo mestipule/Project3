@@ -10,7 +10,6 @@ router.route("/")
 router
   .route("/:id")
   .get(intersectionsController.findById)
-  .put(intersectionsController.update)
-  .delete(intersectionsController.remove);
+
 
 module.exports = router;

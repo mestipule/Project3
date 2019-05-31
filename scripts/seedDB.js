@@ -9,22 +9,30 @@ mongoose.connect(
 );
 
 const intersectionSeed = [
-
-  {
-    address: "43593 barretts Sq",
-    city: "ashburn",
-    State: "VA",
-    rating: 1,
-    date: new Date(Date.now())
-  },
   {
     address: "22058-22040 Pacific Blvd",
     city: "sterling",
     State: "VA",
-    rating: 1,
     date: new Date(Date.now())
   },
-
+  {
+    "address" : "45385 VA-625",
+    "city" : "Sterling",
+    "State" : "Virginia",
+    date: new Date(Date.now())
+},
+{
+  "address" : "Capital Beltway Inner Loop",
+  "city" : "Tysons",
+  "State" : "Virginia",
+  date: new Date(Date.now())
+},
+{
+  "address" : "1900 Chain Bridge Rd",
+  "city" : "Tysons",
+  "State" : "Virginia",
+  date: new Date(Date.now())
+}
 
 ];
 

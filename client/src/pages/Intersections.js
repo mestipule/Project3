@@ -56,16 +56,15 @@ class Intersections extends Component {
     }
   };
 
-  handleFullAddressUpdate = (address, city, state) => {
+  handleFullAddressUpdate = (address, city, State) => {
     this.setState({
       address: address,
       city: city,
-      State: state
+      State: State
     })
   }
 
   render() {
-    console.log("in intersection render");
     return (
       <Container fluid>
         <Row>
@@ -77,13 +76,13 @@ class Intersections extends Component {
               <Input
                 value={this.state.address}
                 onChange={this.handleInputChange}
-                name="Address"
+                name="address"
                 placeholder="address (required)"
               />
               <Input
                 value={this.state.city}
                 onChange={this.handleInputChange}
-                name="City"
+                name="city"
                 placeholder="city (required)"
               />
               <Input

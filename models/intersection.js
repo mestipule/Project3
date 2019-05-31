@@ -5,7 +5,6 @@ const intersectionSchema = new Schema({
   address: { type: String, required: true },
   city: { type: String, required: true },
   State: { type: String, required: true },
-  rating: {type: Number},
   date: { type: Date, default: Date.now }
 });
 

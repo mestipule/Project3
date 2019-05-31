@@ -10,10 +10,7 @@ export default {
   getIntersection: function(id) {
     return axios.get("/api/intersections/" + id);
   },
-  // Deletes the intersection with the given id
-  deleteIntersection: function(id) {
-    return axios.delete("/api/intersections/" + id);
-  },
+  
   // Saves a intersection to the database
   saveIntersection: function(intersectionData) {
     console.log("saveIntersection")
