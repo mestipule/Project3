@@ -22,7 +22,7 @@ class Intersections extends Component {
   loadIntersections = () => {
     API.getIntersections()
       .then(res => {
-        this.setState({ intersections: res.data, address: "", city: "", State: ""})
+        this.setState({ intersections: res.data, address: "", city: "", State: "" })
         console.log("Res");
         console.log(res)
       }
@@ -118,26 +118,26 @@ class Intersections extends Component {
               </List>
             ) : (
                 <h1 className="display-4 ptxt">No Results to Display</h1>
-            )}
+              )}
           </Col>
         </Row>
         <Row>
           <Col size="md-10 md-offset-1">
             <article>
               <h1 className="display-4 ptxt">Drag and drop the pin to add your intersection</h1>
-              
-              <div style={{ marginLeft: '10%' , width:'100%'}}>
+
+              <div style={{ marginLeft: '10%', width: '100%' }}>
                 <Map
-                    page = "landing"
-                    google={this.props.google}
-                    center={{ lat: 38.9095559, lng: -77.0430325 }}
+                  page="landing"
+                  google={this.props.google}
+                  center={{ lat: 38.9095559, lng: -77.0430325 }}
                   height='400px'
-                  
-                    zoom={15}
-                    handleFullAddressUpdate= {this.handleFullAddressUpdate}
+
+                  zoom={15}
+                  handleFullAddressUpdate={this.handleFullAddressUpdate}
                 />
-             </div>
-            
+              </div>
+
             </article>
           </Col>
         </Row>

@@ -55,7 +55,9 @@ class Detail extends Component {
         </Row>
         <Row>
           <Col size="md-2">
-            <Link to="/">← Back to Dangerous Intersections List</Link>
+            <Link to="/">
+              <div style={{ color:"#2d4552" }}>← Back to Dangerous Intersections List</div>
+              </Link>
           </Col>
         </Row>
       </Container>
