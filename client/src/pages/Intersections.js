@@ -45,7 +45,7 @@ class Intersections extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    if (this.state.address && this.state.city && this.state.State) {
+    if (this.state.Address && this.state.City && this.state.State) {
       API.saveIntersection({
         address: this.state.Address,
         city: this.state.City,
@@ -93,7 +93,7 @@ class Intersections extends Component {
                 placeholder="State (required)"
               />
               <FormBtn
-                disabled={!(this.state.City && this.state.Address)}
+                // disabled={!(this.state.city && this.state.address)}
                 onClick={this.handleFormSubmit}
               >
                 <p className="lead btxt"> Submit Intersection</p>
